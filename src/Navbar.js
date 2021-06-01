@@ -17,7 +17,7 @@ class Navbar extends Component {
 
     handleFormatChange(evt) {
         this.setState({ format: evt.target.value, open: true });
-        this.props.handleChange(evt.target.value);
+        this.props.changeColorFormat(evt.target.value);
     }
 
     closeSnackbar() {
@@ -26,7 +26,7 @@ class Navbar extends Component {
 
     render() {
         const { level, changeLevel } = this.props;
-        const { format } = this.state;
+        const { format, open } = this.state;
         return (
             <nav className="Navbar">
                 <div className="logo">
@@ -46,16 +46,20 @@ class Navbar extends Component {
                 </div>
                 <div className="select-container">
                     <Select value={format} onChange={this.handleFormatChange}>
-                        <MenuItem value="hex">HEX - #ffffff</MenuItem>
-                        <MenuItem value="rgb">RGB - rgb(255, 255, 255)</MenuItem>
-                        <MenuItem value="rgba">RGBA - rgba(255, 255, 255, 1.0)</MenuItem>
+                        <MenuItem value="hex">HEX</MenuItem>
+                        <MenuItem value="rgb">RGB</MenuItem>
+                        <MenuItem value="rgba">RGBA</MenuItem>
                     </Select>
                 </div>
                 <Snackbar
                     anchorOrigin={{ vertical: "bottom", horizontal: "left" }}
-                    open={this.state.open}
+                    open={open}
                     autoHideDuration={3000}
-                    message={<span id="message-id">Format changed to {format.toUpperCase()}</span>}
+                    message={
+                        <span id="message-id">
+                            Format changed to {format.toUpperCase()}
+                        </span>
+                    }
                     ContentProps={{
                         "aria-describedby": "message-id"
                     }}
