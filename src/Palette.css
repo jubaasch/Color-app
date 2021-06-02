@@ -1,4 +1,4 @@
-.Palette {
+/* .Palette {
     height: 100vh;
     display: flex;
     flex-direction: column;
@@ -11,9 +11,9 @@
     flex-wrap: wrap;
     align-items: flex-start;
     justify-content: flex-start;
-}
+} */
 
-.Palette-footer {
+/* .Palette-footer {
     background-color: white;
     height: 4vh;
     display: flex;
@@ -24,4 +24,4 @@
 
 .emoji {
     margin: 0 1rem;
-}
+} */

@@ -13,7 +13,7 @@ const styles = {
         display: 'inline-block',
         position: 'relative',
         cursor: 'pointer',
-        marginBottom: '-3px',
+        marginBottom: '-3.5px',
         '&:hover button': {
             opacity: '1'
         }
