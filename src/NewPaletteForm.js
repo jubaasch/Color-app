@@ -5,20 +5,14 @@ import Drawer from '@material-ui/core/Drawer';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
-//import List from '@material-ui/core/List';
 import Typography from '@material-ui/core/Typography';
 import Divider from '@material-ui/core/Divider';
 import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
-/* import ChevronRightIcon from '@material-ui/icons/ChevronRight';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
-import ListItemText from '@material-ui/core/ListItemText';
-import InboxIcon from '@material-ui/icons/MoveToInbox';
-import MailIcon from '@material-ui/icons/Mail'; */
 import { ChromePicker } from 'react-color';
+import DraggableColorBox from './DraggableColorBox';
 
 const drawerWidth = 240;
 
@@ -62,6 +56,7 @@ const useStyles = makeStyles((theme) => ({
         justifyContent: 'flex-end',
     },
     content: {
+        height: 'calc(100vh - 64px)',
         flexGrow: 1,
         padding: theme.spacing(3),
         transition: theme.transitions.create('margin', {
@@ -83,7 +78,7 @@ function NewPaletteForm() {
     const classes = useStyles();
     const [open, setOpen] = React.useState(false);
     const [currentColor, setCurrentColor] = React.useState('#fff');
-    const [paletteColors, setPaletteColors] = React.useState(['#45ef23', '#ff978e'])
+    const [paletteColors, setPaletteColors] = React.useState([])
 
     const handleDrawerOpen = () => {
         setOpen(true);
@@ -93,7 +88,7 @@ function NewPaletteForm() {
         setOpen(false);
     };
 
-    const handleChangeComplete = (color) => {
+    const handleChange = (color) => {
         setCurrentColor(color.hex);
     };
 
@@ -145,7 +140,11 @@ function NewPaletteForm() {
                     <Button variant="contained" color="secondary">Clear palette</Button>
                     <Button variant="contained" color="primary">Random color</Button>
                 </div>
-                <ChromePicker color={currentColor} onChangeComplete={handleChangeComplete} />
+                <ChromePicker
+                    color={currentColor}
+                    onChange={handleChange}
+                    disableAlpha={true}
+                />
                 <Button
                     variant="contained"
                     style={{ backgroundColor: currentColor }}
@@ -158,11 +157,9 @@ function NewPaletteForm() {
                 })}
             >
                 <div className={classes.drawerHeader} />
-                <ul>
-                    {paletteColors.map(color => (
-                        <li style={{ backgroundColor: color }}>{color}</li>
-                    ))}
-                </ul>
+                {paletteColors.map(color => (
+                    <DraggableColorBox color={color} />
+                ))}
             </main>
         </div>
     );
