@@ -6,7 +6,7 @@ const styles = {
         overflow: 'hidden'
     },
     PaletteColors: {
-        height: '90%'
+        height: '89%'
     },
     goBack: {
         backgroundColor: 'black',

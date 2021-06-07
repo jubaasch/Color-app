@@ -4,7 +4,7 @@ const styles = {
         height: '100vh',
         display: 'flex',
         alignItems: 'flex-start',
-        justifyContent: 'center'
+        justifyContent: 'center',
     },
     container: {
         width: '50%',
