@@ -1,12 +1,16 @@
 import sizes from './mediaQueries';
+import bg from './bg.svg';
 
 const styles = {
     root: {
-        backgroundColor: 'blue',
         height: '100vh',
         display: 'flex',
         alignItems: 'flex-start',
         justifyContent: 'center',
+        /* Background by svgbackgrounds.com */
+        backgroundColor: '#000333',
+        backgroundImage: `url(${bg})`,
+        overflow: 'scroll'
     },
     container: {
         width: '50%',
@@ -28,11 +32,14 @@ const styles = {
             color: 'white'
         }
     },
+    heading: {
+        fontSize: '2rem'
+    },
     palettes: {
         boxSizing: 'border-box',
         width: '100%',
         display: 'grid',
-        gridTemplateColumns: 'repeat(3, 30%)',
+        gridTemplateColumns: 'repeat(3, 31.8%)',
         gridGap: '1.5rem',
         [sizes.down('md')]: {
             gridTemplateColumns: 'repeat(2, 50%)',
