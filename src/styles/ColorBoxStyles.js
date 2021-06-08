@@ -15,7 +15,7 @@ const styles = {
         },
         [sizes.down('lg')]: {
             width: '25%',
-            height: props => props.showLink ? '20%' : '30%'
+            height: props => props.showLink ? '20%' : '33.333%'
         },
         [sizes.down('md')]: {
             width: '50%',
@@ -39,27 +39,28 @@ const styles = {
         border: 'none',
         right: '0px',
         bottom: '0px',
-        width: '60px',
-        height: '30px',
+        width: '3.2rem',
+        height: '1.52rem',
         textAlign: 'center',
-        lineHeight: '30px',
-        textTransform: 'uppercase'
+        lineHeight: '1.52rem',
+        textTransform: 'uppercase',
+        fontSize: '0.8rem',
     },
     copyButton: {
         color: props => chroma(props.background).luminance() >= 0.6 ? 'rgba(0,0,0,0.5)' : 'white',
-        width: '100px',
-        height: '30px',
+        width: '4rem',
+        height: '1.5rem',
         position: 'absolute',
         display: 'inline-block',
         top: '50%',
         left: '50%',
-        marginLeft: '-50px',
-        marginTop: '-15px',
+        marginLeft: '-2rem',
+        marginTop: '-0.75rem',
         textAlign: 'center',
         outline: 'none',
         background: 'rgba(255, 255, 255, 0.3)',
         fontSize: '1rem',
-        lineHeight: '30px',
+        lineHeight: '1.5rem',
         textTransform: 'uppercase',
         border: 'none',
         textDecoration: 'none',
@@ -74,7 +75,8 @@ const styles = {
         color: 'black',
         letterSpacing: '1px',
         textTransform: 'uppercase',
-        fontSize: '12px'
+        fontSize: '12px',
+        lineHeight: '0.5rem'
     },
     copyOverlay: {
         opacity: '0',
@@ -113,7 +115,10 @@ const styles = {
             textAlign: 'center',
             marginBottom: '0',
             padding: '1rem',
-            textTransform: 'uppercase'
+            textTransform: 'uppercase',
+            [sizes.down('xs')]: {
+                fontSize: '5rem'
+            }
         },
         '& p': {
             fontSize: '2rem',

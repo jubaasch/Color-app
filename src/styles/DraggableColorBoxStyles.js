@@ -1,3 +1,5 @@
+import sizes from './mediaQueries';
+
 const styles = {
     root: {
         width: '20%',
@@ -6,10 +8,22 @@ const styles = {
         display: 'inline-block',
         position: 'relative',
         cursor: 'pointer',
-        marginBottom: '-3.5px',
+        marginBottom: '-4px',
         '&:hover svg': {
             color: 'rgba(255,255,255,0.9)',
             transform: 'scale(1.5)'
+        },
+        [sizes.down('lg')]: {
+            width: '25%',
+            height: '20%'
+        },
+        [sizes.down('md')]: {
+            width: '50%',
+            height: '10%'
+        },
+        [sizes.down('sm')]: {
+            width: '100%',
+            height: '5%'
         }
     },
     boxContent: {
@@ -21,11 +35,15 @@ const styles = {
         color: 'black',
         letterSpacing: '1px',
         textTransform: 'uppercase',
-        fontSize: '12px',
+        fontSize: '0.8rem',
         display: 'flex',
-        justifyContent: 'space-between'
+        justifyContent: 'space-between',
+        [sizes.down('sm')]: {
+            bottom: '1rem'
+        }
     },
     deleteIcon: {
+        fontSize: '1rem',
         color: 'rgba(0,0,0,0.5)',
         transition: 'all 0.3s ease-in-out'
     }

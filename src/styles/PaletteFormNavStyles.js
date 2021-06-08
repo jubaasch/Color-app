@@ -1,4 +1,5 @@
 import { drawerWidth } from '../constants';
+import sizes from './mediaQueries';
 
 const styles = theme => ({
     root: {
@@ -29,13 +30,37 @@ const styles = theme => ({
         marginRight: 20
     },
     navBtns: {
-        marginRight: '1rem'
+        marginRight: '1rem',
+        [sizes.down('xs')]: {
+            marginRight: '0.2rem'
+        }
     },
     button: {
-        margin: '0 0.5rem'
+        margin: '0 0.5rem',
+        [sizes.down('md')]: {
+            marginRight: '0.3rem',
+            padding: '0.2rem 0.6rem',
+            fontSize: '0.8rem'
+        },
+        [sizes.down('sm')]: {
+            marginRight: '0.2rem',
+            padding: '0.15rem 0.6rem',
+            fontSize: '0.7rem'
+        },
+        [sizes.down('xs')]: {
+            marginRight: '0.1rem',
+            marginBottom: '0.1rem',
+            padding: '0.1rem 0.5rem',
+            fontSize: '0.7rem'
+        }
     },
     btnLink: {
         textDecoration: 'none'
+    },
+    title: {
+        [sizes.down('sm')]: {
+            display: 'none'
+        }
     }
 });
 

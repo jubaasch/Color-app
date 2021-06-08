@@ -1,3 +1,5 @@
+import sizes from './mediaQueries';
+
 const styles = {
     Navbar: {
         display: 'flex',
@@ -6,9 +8,9 @@ const styles = {
         height: '6vh',
     },
     logo: {
-        marginRight: '15px',
-        padding: '0 13px',
-        fontSize: '22px',
+        marginRight: '1rem',
+        padding: '0 0.8rem',
+        fontSize: '1.1rem',
         backgroundColor: '#eceff1',
         height: '100%',
         display: 'flex',
@@ -16,14 +18,17 @@ const styles = {
         '& a': {
             textDecoration: 'none',
             color: 'black'
+        },
+        [sizes.down('xs')]: {
+            /* display: 'none' */
         }
     },
     slider: {
-        width: '350px',
-        margin: '0 10px',
+        width: '21rem',
+        margin: '0 0.7rem',
         display: 'inline-block',
         '& .rc-slider-rail': {
-            height: '8px'
+            height: '0.5rem'
         },
         '& .rc-slider-track': {
             backgroundColor: 'transparent'
@@ -33,11 +38,20 @@ const styles = {
             outline: 'none',
             border: '2px solid green',
             boxShadow: 'none',
-            width: '13px',
-            height: '13px',
+            width: '0.8rem',
+            height: '0.8rem',
             marginLeft: '-7px',
             marginTop: '-3px'
-        }
+        },
+        [sizes.down('lg')]: {
+            width: '12rem'
+        },
+        [sizes.down('md')]: {
+            width: '11rem'
+        },
+        [sizes.down('sm')]: {
+            width: '9rem'
+        },
     },
     selectContainer: {
         marginLeft: 'auto',
