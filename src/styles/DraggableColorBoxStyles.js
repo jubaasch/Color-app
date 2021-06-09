@@ -1,4 +1,5 @@
 import sizes from './mediaQueries';
+import chroma from 'chroma-js';
 
 const styles = {
     root: {
@@ -32,7 +33,7 @@ const styles = {
         width: '100%',
         left: '0px',
         bottom: '0px',
-        color: 'black',
+        color: props => chroma(props.color).luminance() <= 0.07 ? 'rgba(255,255,255,0.8)' : 'rgba(0,0,0,0.8)',
         letterSpacing: '1px',
         textTransform: 'uppercase',
         fontSize: '0.8rem',
@@ -40,6 +41,9 @@ const styles = {
         justifyContent: 'space-between',
         [sizes.down('sm')]: {
             bottom: '1rem'
+        },
+        '& svg': {
+            color: props => chroma(props.color).luminance() <= 0.07 ? 'rgba(255,255,255,0.8)' : 'rgba(0,0,0,0.8)'
         }
     },
     deleteIcon: {
