@@ -11,7 +11,7 @@ class MiniPallete extends Component {
 
     removePalette(evt) {
         evt.stopPropagation();
-        this.props.handleRemove(this.props.id)
+        this.props.toggleDialog(this.props.id)
     }
 
     render() {
